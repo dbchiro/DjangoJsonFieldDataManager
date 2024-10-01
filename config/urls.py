@@ -51,5 +51,5 @@ urlpatterns = [
         name="schema-redoc",
     ),
     path("api-auth/", include("rest_framework.urls")),
-    path("api/v1/", include("jsondata_manager.urls")),
+    path("api/", include("jsondata_manager.urls")),
 ]

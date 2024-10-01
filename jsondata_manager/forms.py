@@ -18,7 +18,6 @@ class AllowedKeyForm(forms.ModelForm):
 
     def get_model_choices(self):
         # Get all models in the current app
-        app_label = "your_app_name"  # Replace with your app name
         models = apps.get_models()
         choices = [
             (model.__name__, model.__name__)

@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from .models import AllowedKey
+from .serializers import AllowedKeySerializer
+
+
+class AllowedKeyViewSet(viewsets.ModelViewSet):
+    queryset = AllowedKey.objects.all()
+    serializer_class = AllowedKeySerializer

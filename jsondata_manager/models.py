@@ -15,14 +15,24 @@ class AllowedKey(models.Model):
         (LIST, "List"),
         (DICT, "Dict"),
     ]
-
+    INPUT_TYPE_CHOICES = [
+        ("text", "Text"),
+        ("number", "Number"),
+        ("select", "Select"),
+        ("select_multiple", "Select Multiple"),
+        ("textarea", "Textarea"),
+    ]
     model_name = models.CharField(max_length=100)
     key = models.CharField(max_length=100, unique=True)
     value_type = models.CharField(max_length=10, choices=VALUE_TYPE_CHOICES)
+    expected_values = models.JSONField(default=list, blank=True, null=True)
+    input_type = models.CharField(
+        max_length=20, choices=INPUT_TYPE_CHOICES, default="text"
+    )
     hidden = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"{self.model_name} - {self.key} ({self.value_type})"
+        return f"{self.model_name} - {self.key} ({self.value_type} - {self.input_type})"
 
 
 class ExtraDataMixin(models.Model):

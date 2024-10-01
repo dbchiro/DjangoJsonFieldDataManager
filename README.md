@@ -1,15 +1,15 @@
 # SINP Organisms for Django
 
-[DjangoSinpOrganisms](https://github.com/dbchiro/DjangoSinpOrganisms) is a simple [Django](https://www.djangoproject.com/) reusable app to manage [French SINP Organisms](http://standards-sinp.mnhn.fr/referentiel-des-organismes/), respecting standard.
+[DjangoJsonFieldDataManager](https://github.com/dbchiro/DjangoJsonFieldDataManager) is a simple [Django](https://www.djangoproject.com/) reusable app to manage an extra_data JSON field possible key/values.
 
-See docs for more details : <https://dbchiro.github.io/DjangoSinpOrganisms/>
+See docs for more details : <https://dbchiro.github.io/DjangoJsonFieldDataManager/>
 
 ## Quick start
 
 1. Install app
 
 ```bash
-pip install -U dj-sinp-organisms
+pip install -U jsondata_manager
 ```
 
 2. Configure `INSTALLED_APPS`:
@@ -40,7 +40,7 @@ urlpatterns = [
 4. Run `python manage.py migrate` to create the polls models.
 5. Start the development server and visit <http://127.0.0.1:8000/admin/>
    to create an organism (you'll need the Admin app enabled).
-6. Visit <http://127.0.0.1:8000/api/v1/organisms> to view organisms API.
+6. Visit <http://127.0.0.1:8000/api/v1/extradata> to view organisms API.
 
 ## Database models
 
